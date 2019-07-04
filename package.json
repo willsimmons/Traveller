@@ -9,7 +9,9 @@
     "dev-start": "NODE_ENV=development nodemon server/server.js",
     "lint": "standard --verbose | snazzy",
     "all": "./serverStart",
-    "postinstall": "cd traveller && npm install"
+    "postinstall": "cd traveller && npm install",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -33,7 +35,8 @@
     "express": "^4.14.0",
     "ioredis": "^2.4.0",
     "qs": "^6.3.0",
-    "redis-server": "0.0.3"
+    "redis-server": "0.0.3",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.0",
@@ -45,5 +48,6 @@
     "sinon": "^1.17.6",
     "snazzy": "^5.0.0",
     "supertest": "^2.0.1"
-  }
+  },
+  "snyk": true
 }
